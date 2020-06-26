@@ -1,0 +1,17 @@
+import jurado.*
+import pasteleros.*
+
+describe "Test del jurado" {
+	
+	test "el mas habilidoso es marcos"{
+		assert.equals(marcos,jurado.masHabilidoso())
+	}
+	test "el menos habilidoso es sonia"{
+		assert.equals(sonia,jurado.menosHabilidoso())
+	}
+	
+	test "diferencia de habilidad"{
+		assert.equals(9.9 - 4, jurado.diferenciaHabilidad())
+	}
+	
+}

@@ -1,17 +1,47 @@
 import pasteleros.*
 
 
-test "samanta no tiene ingredientes" {
-	assert.that(samanta.ingredientes().isEmpty())
+// Punto 1: Habilidosos
+//Modelar a los pasteleros, implementando tests para 
+//comprobar que el nivel de habilidad de cada uno es correcto.
+
+test "samanta tiene habilidad 9" {
+	assert.equals(9, samanta.habilidad())
 }
 
-test "sonia con cuchara y sin ingredientes tiene habilidad 3" {
-	sonia.descartarIngredientes()
+test "sonia con cuchara y 1 kg de ingrediente tiene habilidad 4" {
 	sonia.instrumento(cuchara)
-	assert.equals(sonia.habilidad(), 3)
+	assert.equals(4,sonia.habilidad())
 }
 
-test "samanta no puede preparar su postre favorito" {
-	assert.notThat(samanta.puedePrepararSuPostreFavorito())
+test "sonia con varita y 1 kg de ingrediente tiene habilidad 10" {
+	sonia.instrumento(varita)
+	assert.equals(10,sonia.habilidad())
 }
+
+// y variando las cantidades o pesos. 
+test "sonia disminuye peso de ingrediente"{
+	sonia.agregarPeso(2)
+	assert.equals(6,sonia.habilidad())
+}
+test "marcos tiene habilidad 9.9"{
+	assert.equals(9.9,marcos.habilidad())
+}
+
+//agregando algún nuevo ingrediente,
+test "marcos con nuevo ingrediente"{
+	marcos.agregarIngrediente("almendras",0.1)
+	assert.equals(10,marcos.habilidad())
+}
+ 
+
+//Poder saber si cada participantes puede cocinar su postre favorito. Hacer los tests correspondientes.
+
+
+
+// Punto 2: Postre favorito
+
+//test "samanta no puede preparar su postre favorito" {
+//	assert.notThat(samanta.puedePrepararSuPostreFavorito())
+//}
 
